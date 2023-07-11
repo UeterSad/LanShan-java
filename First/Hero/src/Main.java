@@ -42,7 +42,7 @@ public class Main {
                 System.out.println("round"+i);
                 player_1.useAtk(stu);
                 stu.useAtk(player_1);
-                if (player_1.getFlag()==2)player_1.useSkill(s1,stu);
+                if (player_1.getFlag()%2==0)player_1.useSkill(s1,stu);
             }
         } else if (n==2) {
             Hero player_2=new Hero(hName,hHP,hAtk,s1);
@@ -55,7 +55,7 @@ public class Main {
                 break;
             }
             for (int i = 1;  ; i++) {
-                if (player_2.getHP()<=0||stu.getHP()<=0)
+                if (player_2.getHP()<=0||goddess.getHP()<=0)
                 {
                     if(player_2.getHP()<=0){
                         System.out.println("lose");
@@ -67,9 +67,9 @@ public class Main {
                     }
                 }
                 System.out.println("round"+i);
-                player_2.useAtk(stu);
-                stu.useAtk(player_2);
-                if (player_2.getFlag()==2)player_2.useSkill(s1,stu);
+                player_2.useAtk(goddess);
+                goddess.useAtk(player_2);
+                if (player_2.getFlag()%3==0)player_2.useSkill(s2,goddess);
             }
         }else {
             System.out.println("非所给选项");
